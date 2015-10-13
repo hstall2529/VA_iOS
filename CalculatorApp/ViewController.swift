@@ -32,21 +32,66 @@ class ViewController: UIViewController {
   @IBAction func addButtonPressed(sender: UIButton) {
     print ("now I pressed the add button")
     self.numberLabel.text = "Hello!"
-    print(self.textfield1.text)
-    print(self.textfield2.text)
+    
+    let operand1 = textfield1.text
+    let operand2 = textfield2.text
+    
+    let operand1ButNotAnOptional = operand1!
+    let operand2ButNotAnOptional = operand2!
+    
+    let sum = (Int(operand1ButNotAnOptional))! + (Int(operand2ButNotAnOptional))!
+    
+    updateNumberLabel(sum)
+    
   }
   
   @IBAction func minusButtonPressed(sender: UIButton) {
     print ("now I pressed the subtract button")
+    let operand1 = textfield1.text
+    let operand2 = textfield2.text
+    
+    let operand1ButNotAnOptional = operand1!
+    let operand2ButNotAnOptional = operand2!
+    
+    let difference = (Int(operand1ButNotAnOptional))! - (Int(operand2ButNotAnOptional))!
+    
+    updateNumberLabel(difference)
   }
   
   @IBAction func divideButtonPressed(sender: UIButton) {
     print ("now I pressed the divide button")
+    let operand1 = textfield1.text
+    let operand2 = textfield2.text
+    
+    let operand1ButNotAnOptional = operand1!
+    let operand2ButNotAnOptional = operand2!
+    
+    let quotient = (Double(operand1ButNotAnOptional))! / (Double(operand2ButNotAnOptional))!
+    
+    updateNumberLabelD(quotient)
   }
   
   
   @IBAction func multiplyButtonPressed(sender: UIButton) {
     print ("now I pressed the multiply button")
+    let operand1 = textfield1.text
+    let operand2 = textfield2.text
+    
+    let operand1ButNotAnOptional = operand1!
+    let operand2ButNotAnOptional = operand2!
+    
+    let product = (Int(operand1ButNotAnOptional))! * (Int(operand2ButNotAnOptional))!
+    
+    updateNumberLabel(product)
+  }
+ 
+  
+  func updateNumberLabel(sum: Int) {
+    numberLabel.text = "\(sum)"
+  }
+  
+  func updateNumberLabelD(sum: Double) {
+    numberLabel.text = "\(sum)"
   }
   
 }
